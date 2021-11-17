@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace currency_conversion.Service
 {
-    public class CovertService: ICovertService
+    public class CovertService : ICovertService
     {
         public string BasicConvert(ConvertQuery query)
         {
@@ -36,8 +36,13 @@ namespace currency_conversion.Service
                 "TWD" => fromCurrencyObj.TWD,
                 "JPY" => fromCurrencyObj.JPY,
                 "USD" => fromCurrencyObj.USD,
-                _ => 0
+                _ => -1
             };
+
+            if (priceChoose < 0)
+            {
+                return null;
+            }
 
             var priceresult = query.Price * priceChoose;
             var result = priceresult.ToString("N", CultureInfo.CreateSpecificCulture("en-US"));

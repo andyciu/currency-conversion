@@ -42,10 +42,7 @@ namespace currency_conversion.Controllers
                 return NotFound();
             }
 
-            return new ConvertRes
-            {
-                Result = result
-            };
+            return Ok(new ConvertRes { Result = result });
         }
     }
 }
