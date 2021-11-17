@@ -45,4 +45,4 @@ steps:
     azureSubscription: '$(web-app-name) - Azure'
     appType: 'webApp'
     WebAppName: '$(web-app-name)'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/*.zip'
